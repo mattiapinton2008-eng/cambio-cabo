@@ -1,0 +1,37 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102d25"><title>CAMBIO · Cabo online</title><link rel="stylesheet" href="style.css"></head><body><main class="app"><header><div class="brand"><span class="brand-mark">✦</span><div><h1>CAMBIO</h1><small>EL JUEGO DE CARTAS · CABO</small></div></div><button class="ghost" id="helpBtn">¿Cómo se juega?</button></header>
+<section id="home" class="panel home"><p class="eyebrow">LA MESA ESTÁ PREPARADA</p><h2>¿Una partida?</h2><p class="muted">Memoriza tus cartas, observa a los demás y termina con la menor puntuación.</p><div class="form"><label>Tu nombre<input id="playerName" maxlength="14" placeholder="¿Cómo te llamas?"></label><button id="createBtn" class="primary">＋ Crear partida</button><div class="joinline"><input id="roomCode" maxlength="6" placeholder="Código de sala"><button id="joinBtn" class="secondary">Unirme</button></div><label>Dificultad de los bots<select id="difficulty"><option>Normal</option><option>Facil</option><option>Dificil</option></select></label><button id="soloBtn" class="secondary wide">Jugar solo contra 3 bots</button></div></section>
+<section id="lobby" class="panel hidden"><div class="row between"><div><p class="eyebrow">SALA DE JUEGO</p><h2>Invita a tus amigos</h2></div><strong class="room-code" id="roomCodeLabel"></strong></div><p class="muted">Comparte el enlace. Se necesitan de 3 a 8 participantes.</p><div class="row"><button id="copyBtn" class="secondary">Copiar enlace</button><button id="waBtn" class="secondary">WhatsApp</button></div><div id="playersList" class="players"></div><div class="row"><button id="addBotBtn" class="secondary">＋ Añadir bot</button><button id="removeBotBtn" class="ghost">Quitar bot</button></div><button id="startBtn" class="primary wide">Empezar partida</button></section>
+<section id="game" class="hidden game-screen">
+<div class="table-shell">
+  <div class="table-rim">
+    <div class="table" aria-label="Mesa de juego vista desde arriba">
+      <div class="felt-grain"></div>
+      <div class="table-brand">CAMBIO <span>·</span> CABO</div>
+      <div class="table-hud"><div class="turn-indicator" id="status">Preparando la mesa…</div><div class="hud-right"><span class="round-label">MESA EN DIRECTO</span><button id="soundBtn" class="icon-button" aria-label="Activar o silenciar sonidos">🔊</button></div></div>
+      <div class="rivals" id="rivals"></div>
+      <div class="playarea">
+        <div class="pile" id="deckPile" role="button" tabindex="0" aria-label="Robar del mazo sobrante">
+          <span class="deck-card"><img src="/cards/back-red.png" alt="Reverso de la baraja"></span>
+          
+        </div>
+        <div id="drawnArea" class="drawn"></div>
+        <div class="pile center" id="centerPile" role="button" tabindex="0" aria-label="Descartar en el centro">
+          <div id="topCard" class="card-back static-back"><img src="/cards/back-red.png" alt="Reverso"></div>
+        </div>
+      </div>
+      <div id="fxBanner" class="fx-banner hidden"></div>
+      <div class="table-controls">
+        <div class="table-controls-label">TUS ACCIONES</div>
+        <div class="actions">
+          <button id="orderBtn" class="ghost">Ordenar</button>
+          <button id="touchBtn" class="danger">TOCAR MESA</button>
+          <button id="endBtn" class="primary">Finalizar turno</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<details class="logbox"><summary>Historial de la partida</summary><div id="log"></div></details>
+</section>
+<section id="tutorial" class="overlay hidden"><div class="tutorial panel"><div class="row between"><p class="eyebrow">GUÍA PARA PRINCIPIANTES</p><button id="closeHelp" class="ghost">✕</button></div><div id="tutorialContent"></div><div class="row between"><button id="prevHelp" class="secondary">Anterior</button><span id="helpProgress"></span><button id="nextHelp" class="primary">Siguiente</button></div></div></section>
+<div id="modal" class="overlay hidden"><div class="panel modalbox"><button id="closeModal" class="ghost close">✕</button><div id="modalContent"></div></div></div><div id="toast" class="toast hidden"></div></main><script src="/socket.io/socket.io.js"></script><script src="tutorial.js"></script><script src="client.js"></script></body></html>

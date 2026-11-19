@@ -1,0 +1,15 @@
+CAMBIO — ACTUALIZACIÓN DE VISTA CENITAL
+
+1. Descomprime cambio-game-topdown.zip.
+2. Abre la carpeta cambio-game.
+3. En GitHub entra en el repositorio cambio-cabo.
+4. Sube TODO el contenido de la carpeta cambio-game a la raíz del repositorio.
+5. Conserva la carpeta public y todos sus recursos, incluida public/cards.
+6. Confirma con Commit changes.
+7. Render desplegará el commit automáticamente. Espera a que el servicio indique Live.
+8. Abre https://cambio-cabo.onrender.com y recarga con Cmd + Shift + R.
+
+No crees otro repositorio ni otro servicio de Render. La dirección web no cambia.
+
+
+Las cartas originales están en public/cards. Sube también todos esos archivos y sobrescribe los anteriores. No elimines ni renombres la carpeta public/cards.
