@@ -1,0 +1,7 @@
+CAMBIO PREMIUM — INSTALACIÓN
+
+Render: Root Directory = CAMBIO-v3-cartas-originales/cambio-final (si el repositorio mantiene la estructura duplicada de esta build).
+Build Command: npm install
+Start Command: npm start
+
+Nota: esta carpeta contiene el proyecto actualizado y debe probarse localmente antes de publicar.
